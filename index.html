@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyShop - Products</title>
+    <link rel="preload" as="image" href="images/pexels-photo-373912.jpeg">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
@@ -26,7 +27,12 @@
         <section class="hero" aria-labelledby="hero-title">
             <img src="images/pexels-photo-373912.jpeg"
                  class="hero-image"
-                 alt="City skyline at dusk">
+                 alt="City skyline at dusk"
+                 width="1200"
+                 height="480"
+                 loading="eager"
+                 decoding="async"
+                 fetchpriority="high">
             <div class="hero-text">
                 <h1 id="hero-title">Welcome to MyShop</h1>
                 <p>Find the best products at the lowest prices.</p>
@@ -43,7 +49,11 @@
                 <article class="product-card">
                     <img src="images/pexels-photo-461428.jpeg"
                          class="product-image"
-                         alt="Matcha tea set with whisk and bowl">
+                         alt="Matcha tea set with whisk and bowl"
+                         width="300"
+                         height="200"
+                         loading="lazy"
+                         decoding="async">
                     <h3>Matcha kit</h3>
                     <p class="product-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -55,7 +65,11 @@
                 <article class="product-card">
                     <img src="images/pexels-photo-1334597.jpeg"
                          class="product-image"
-                         alt="Black tablet">
+                         alt="Black tablet"
+                         width="300"
+                         height="200"
+                         loading="lazy"
+                         decoding="async">
                     <h3>Tablet</h3>
                     <p class="product-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -67,7 +81,11 @@
                 <article class="product-card">
                     <img src="images/pexels-photo.jpg"
                          class="product-image"
-                         alt="Laptop on a desk">
+                         alt="Laptop on a desk"
+                         width="300"
+                         height="200"
+                         loading="lazy"
+                         decoding="async">
                     <h3>Laptop</h3>
                     <p class="product-description">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
