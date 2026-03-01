@@ -51,5 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    function logLcp() {
+        if (!window.webVitals || typeof window.webVitals.onLCP !== "function") {
+            console.warn("web-vitals is not available. Check that the script tag loaded.");
+            return;
+        }
+
+        window.webVitals.onLCP(function (metric) {
+            console.log("LCP:", metric.value, "ms");
+        });
+    }
+
+    logLcp();
     setTimeout(runAxeTest, 0);
 });
