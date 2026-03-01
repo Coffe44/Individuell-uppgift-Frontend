@@ -1,7 +1,6 @@
 ﻿# MyShop - statisk webbsida
 
-Det här projektet är en enkel, statisk produktsida för en fiktiv butik (MyShop). Det består av HTML, CSS och JavaScript med fokus på grundläggande struktur, tillgänglighet och prestanda.
-
+Individuell inlämning frontend. fiktiv webshop
 ## Innehåll
 - `index.html` - Sidans struktur och innehåll (header, hero, produkter, nyhetsbrev och footer).
 - `styles.css` - Layout och visuell styling, inklusive responsiv design.
