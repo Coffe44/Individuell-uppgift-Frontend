@@ -1,90 +1,103 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyShop - Products</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="logo">MyShop</div>
-        <div class="menu">
-            <div class="menu-item"><a href="#">Home</a></div>
-            <div class="menu-item"><a href="#">Products</a></div>
-            <div class="menu-item"><a href="#">Contact</a></div>
-        </div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="status" class="sr-only" aria-live="polite"></div>
 
-    <div class="hero">
-        <img src="images/pexels-photo-373912.jpeg"
-             class="hero-image"
-             alt="city">
-        <div class="hero-text">
-            <h1>Welcome to MyShop</h1>
-            <p>Find the best products at the lowest prices.</p>
-            <a href="#" class="primary-button">Shop now</a>
-        </div>
-    </div>
+    <header class="top-bar">
+        <a class="logo" href="#" aria-label="MyShop home">MyShop</a>
+        <nav class="menu" aria-label="Main menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="content">
-        <div class="section-title">
-            <h2>Our Products</h2>
-        </div>
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <img src="images/pexels-photo-373912.jpeg"
+                 class="hero-image"
+                 alt="City skyline at dusk">
+            <div class="hero-text">
+                <h1 id="hero-title">Welcome to MyShop</h1>
+                <p>Find the best products at the lowest prices.</p>
+                <a href="#products" class="primary-button">Shop now</a>
+            </div>
+        </section>
 
-        <div class="products">
-            <div class="product-card">
-                <img src="images/pexels-photo-461428.jpeg"
-                     class="product-image"
-                     alt="Macha tea kit">
-                <h1>Macha kit</h1>
-                <p class="product-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p class="product-price">599 kr</p>
-                <button type="button" class="add-to-cart">Add to cart</button>
+        <section class="content" id="products" aria-labelledby="products-title">
+            <div class="section-title">
+                <h2 id="products-title">Our Products</h2>
             </div>
 
-            <div class="product-card">
-                <img src="images/pexels-photo-1334597.jpeg"
-                     class="product-image"
-                     alt="Tablet">
-                <h1>Tablet</h1>
-                <p class="product-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p class="product-price">1299 kr</p>
-                <button type="button" class="add-to-cart">Add to cart</button>
+            <div class="products">
+                <article class="product-card">
+                    <img src="images/pexels-photo-461428.jpeg"
+                         class="product-image"
+                         alt="Matcha tea set with whisk and bowl">
+                    <h3>Matcha kit</h3>
+                    <p class="product-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <p class="product-price">599 kr</p>
+                    <button type="button" class="add-to-cart">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/pexels-photo-1334597.jpeg"
+                         class="product-image"
+                         alt="Black tablet">
+                    <h3>Tablet</h3>
+                    <p class="product-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <p class="product-price">1299 kr</p>
+                    <button type="button" class="add-to-cart">Add to cart</button>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/pexels-photo.jpg"
+                         class="product-image"
+                         alt="Laptop on a desk">
+                    <h3>Laptop</h3>
+                    <p class="product-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <p class="product-price">3499 kr</p>
+                    <button type="button" class="add-to-cart">Add to cart</button>
+                </article>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="images/pexels-photo.jpg"
-                     class="product-image"
-                     alt="Laptop">
-                <h1>Laptop</h1>
-                <p class="product-description">
-                    Capture your best moments in high resolution. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <p class="product-price">3499 kr</p>
-                <button type="button" class="add-to-cart">Add to cart</button>
-            </div>
-        </div>
-    </div>
+        <section class="newsletter" id="contact" aria-labelledby="newsletter-title">
+            <h2 id="newsletter-title">Subscribe to our newsletter</h2>
+            <p>Get the latest updates and offers.</p>
+            <form>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <button type="submit" class="primary-button">Subscribe</button>
+            </form>
+        </section>
+    </main>
 
-    <div class="newsletter">
-        <h2>Subscribe to our newsletter</h2>
-        <p>Get the latest updates and offers.</p>
-        <form>
-            <input type="text" name="name" placeholder="Your name">
-            <input type="email" name="email" placeholder="Your email">
-            <button type="submit" class="primary-button">Subscribe</button>
-        </form>
-    </div>
-
-    <div class="footer">
-        <p>© 2025 MyShop. All rights reserved.</p>
-        <a href="#">Click here</a>
-    </div>
+    <footer class="footer">
+        <p>&copy; 2025 MyShop. All rights reserved.</p>
+        <a href="#" aria-label="Accessibility statement for MyShop">Accessibility</a>
+    </footer>
 </body>
 </html>
-

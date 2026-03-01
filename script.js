@@ -1,8 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var statusRegion = document.getElementById("status");
+
+    function setStatus(message) {
+        if (!statusRegion) {
+            return;
+        }
+        statusRegion.textContent = message;
+        setTimeout(function () {
+            statusRegion.textContent = "";
+        }, 4000);
+    }
+
     var items = document.querySelectorAll(".add-to-cart");
     items.forEach(function (item) {
         item.addEventListener("click", function () {
-            alert("Item added to cart!");
+            var card = item.closest(".product-card");
+            var name = card ? card.querySelector("h3") : null;
+            var label = name ? name.textContent.trim() : "Item";
+            setStatus(label + " has been added to the cart.");
         });
     });
 
@@ -10,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (newsletterForm) {
         newsletterForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            alert("Thank you for subscribing!");
+            setStatus("Thanks for subscribing!");
+            newsletterForm.reset();
         });
     }
 });
