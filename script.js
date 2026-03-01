@@ -29,4 +29,27 @@ document.addEventListener("DOMContentLoaded", function () {
             newsletterForm.reset();
         });
     }
+
+    function runAxeTest() {
+        if (!window.axe || typeof window.axe.run !== "function") {
+            console.warn("axe-core is not available. Check that the script tag loaded.");
+            return;
+        }
+
+        window.axe.run(document, {}, function (err, results) {
+            if (err) {
+                console.error("axe-core error:", err);
+                return;
+            }
+
+            console.group("axe-core results");
+            console.log("Violations:", results.violations);
+            console.log("Incomplete:", results.incomplete);
+            console.log("Passes:", results.passes);
+            console.log("Inapplicable:", results.inapplicable);
+            console.groupEnd();
+        });
+    }
+
+    setTimeout(runAxeTest, 0);
 });
